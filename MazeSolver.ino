@@ -1,7 +1,8 @@
 /*
 Press joystick button to change between manual and
 autonomous modes. Use joystick to control platform
-orientation when in manual mode*/
+orientation when in manual mode
+*/
 
 #include <Wire.h>
 #include <Adafruit_PWMServoDriver.h>
@@ -66,7 +67,7 @@ void readTouch()
     x_touch = (analogRead(X1)); //Reads Y axis touch position
     sumx = sumx + x_touch;
 
-    //send to processing if values have changed
+    //send to processing if touch position values have changed
     if ((x_touch != xp) || (y_touch != yp))
     {
       Serial.print(x_touch + 100);
@@ -82,6 +83,7 @@ void readTouch()
 
 void setPWM(double ang[])
 {
+//calibrate using PWM values at -30, 0 and +30 degrees
   for (int i = 0; i < 6; i++)
   {
     if (ang[i] <= 0)
