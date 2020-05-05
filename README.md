@@ -5,9 +5,14 @@ This Arduino program was used to control a 6-servo Stewart Platform equipped wit
 
 Autonomous operation of the platform is shown in the gif below.
 
-![Autonomous Operation](autonomous.gif)
+<p align="CENTER">
+  <img align="CENTER" src="autonomous.gif" width=400>
+</p>
 
 
 The platform can also be controlled manually using a joystick, although it is clear that autonomous operation can solve the maze faster than manual operation.
 
-![Manual Operation](manualmode.gif)
+<p align="CENTER">
+  <img align="CENTER" src="manualmode.gif" width=400>
+</p>
+
