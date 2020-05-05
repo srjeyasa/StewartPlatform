@@ -6,7 +6,7 @@ This Arduino program was used to control a 6-servo Stewart Platform equipped wit
 Autonomous operation of the platform is shown in the gif below.
 
 <p align="CENTER">
-  <img align="CENTER" src="autonomous.gif" width=400>
+  <img align="CENTER" src="auto.gif" width=400>
 </p>
 
 
