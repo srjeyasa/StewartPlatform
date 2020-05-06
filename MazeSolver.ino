@@ -1,20 +1,20 @@
 /*
 Press joystick button to change between manual and
-autonomous modes. Use joystick to control platform
-orientation when in manual mode
-*/
+ autonomous modes. Use joystick to control platform
+ orientation when in manual mode
+ */
 
 #include <Wire.h>
-#include <Adafruit_PWMServoDriver.h>
+  #include <Adafruit_PWMServoDriver.h>
 
-Adafruit_PWMServoDriver pwm = Adafruit_PWMServoDriver();
+  Adafruit_PWMServoDriver pwm = Adafruit_PWMServoDriver();
 
 #define X1 A8
-#define X2 A9
-#define Y1 A10
-#define Y2 A11
+  #define X2 A9
+  #define Y1 A10
+  #define Y2 A11
 
-const int  buttonPin = 31;
+  const int  buttonPin = 31;
 unsigned long startMillis = 0;
 const long interval = 300;
 int xp = 0, yp = 0;
@@ -83,7 +83,7 @@ void readTouch()
 
 void setPWM(double ang[])
 {
-//calibrate using PWM values at -30, 0 and +30 degrees
+  //calibrate using PWM values at -30, 0 and +30 degrees
   for (int i = 0; i < 6; i++)
   {
     if (ang[i] <= 0)
@@ -119,7 +119,7 @@ void setPWM(double ang[])
 
 void send2servo(int pitch, int roll, int yaw)
 {
-  calcAngle(pitch , roll, yaw);
+  calcAngle(pitch, roll, yaw);
   setPWM(ang);
 }
 
@@ -220,7 +220,6 @@ void autoMode()
     send2servo(pitch, roll, yaw);
     readTouch();
   }
-
 }
 
 void calcAngle(double x, double y, double z)
@@ -372,7 +371,6 @@ void calcAngle(double x, double y, double z)
   ang[3] = Alpha4 * 180.0 / PI;
   ang[4] = Alpha5 * 180.0 / PI;
   ang[5] = Alpha6 * 180.0 / PI;
-
 }
 
 void moveDown()
@@ -382,7 +380,7 @@ void moveDown()
     return;
   pitch = 5;
   roll = 1;
-  calcAngle(pitch , roll, yaw);
+  calcAngle(pitch, roll, yaw);
   setPWM(ang);
 
   readTouch();
@@ -400,7 +398,7 @@ void moveDown()
 
   pitch = 5;
   roll = 2;
-  calcAngle(pitch , roll, yaw);
+  calcAngle(pitch, roll, yaw);
   setPWM(ang);
 
   readTouch();
@@ -417,7 +415,7 @@ void moveDown()
 
   pitch = 3;
   roll = 3;
-  calcAngle(pitch , roll, yaw);
+  calcAngle(pitch, roll, yaw);
   setPWM(ang);
 
   readTouch();
@@ -434,7 +432,7 @@ void moveDown()
 
   pitch = 3;
   roll = 4;
-  calcAngle(pitch , roll, yaw);
+  calcAngle(pitch, roll, yaw);
   setPWM(ang);
 
   readTouch();
@@ -451,7 +449,7 @@ void moveDown()
 
   pitch = 3;
   roll = 5;
-  calcAngle(pitch , roll, yaw);
+  calcAngle(pitch, roll, yaw);
   setPWM(ang);
 
   readTouch();
@@ -468,13 +466,13 @@ void moveDown()
 
   pitch = 0;
   roll = 9;
-  calcAngle(pitch , roll, yaw);
+  calcAngle(pitch, roll, yaw);
   setPWM(ang);
   delay(100);
 
   pitch = 03;
   roll = 9;
-  calcAngle(pitch , roll, yaw);
+  calcAngle(pitch, roll, yaw);
   setPWM(ang);
 
   readTouch();
@@ -512,9 +510,7 @@ void loop() {
   //check for mode type
   if (manual) { //manual mode
     manualMode();
-  }
-
-  else {  //autonomous mode
+  } else {  //autonomous mode
     autoMode();
   }
 }
