@@ -5,14 +5,14 @@ Press joystick button to change between manual and
  */
 
 #include <Wire.h>
-  #include <Adafruit_PWMServoDriver.h>
+#include <Adafruit_PWMServoDriver.h>
 
-  Adafruit_PWMServoDriver pwm = Adafruit_PWMServoDriver();
+Adafruit_PWMServoDriver pwm = Adafruit_PWMServoDriver();
 
 #define X1 A8
-  #define X2 A9
-  #define Y1 A10
-  #define Y2 A11
+#define X2 A9
+#define Y1 A10
+#define Y2 A11
 
   const int  buttonPin = 31;
 unsigned long startMillis = 0;
