@@ -2,7 +2,7 @@
 Press joystick button to change between manual and
  autonomous modes. Use joystick to control platform
  orientation when in manual mode
- */
+*/
 
 #include <Wire.h>
 #include <Adafruit_PWMServoDriver.h>
